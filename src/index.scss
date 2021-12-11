@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --input-border: #8b8a8b;
+    --input-focus-h: 245;
+    --input-focus-s: 100%;
+    --input-focus-l: 42%;
+}
+
+body {
+    background-color: rgb(230, 230, 230);
+    font-size: 16px;
+    font: 16px/18px Verdana, sans-serif;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+        padding: 0.2rem 0;
+        margin-bottom: 5px;
+
+        a {
+            color: black;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    font-size: 16px;
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: white;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    margin: 20px 0;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-white);
+    border: 1px solid gray;
+    background-color: blanchedalmond;
+
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid black;
+        background-color: transparent;
+    }
+}
+
+
+.section {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.loader-flip {
+    position: relative;
+    display: block;
+    border-radius: 2px;
+    width: 4em;
+    height: 4em;
+    background: rgb(145, 145, 236);
+    animation: flip 1s linear infinite;
+}
+
+@keyframes flip {
+    50% {
+        transform: perspective(100px) rotateX(180deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+    }
+}
